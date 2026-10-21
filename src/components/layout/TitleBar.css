@@ -1,0 +1,444 @@
+/* ==========================================================================
+   Material Design 3 Custom TitleBar Styles
+   Compatible with Arona (Light) & Plana (Dark) Themes
+   ========================================================================== */
+
+.custom-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  min-height: 40px;
+  width: 100%;
+  background-color: var(--md-sys-color-surface);
+  border-bottom: 1px solid var(--ruam-divider-color);
+  user-select: none;
+  -webkit-user-select: none;
+  box-sizing: border-box;
+  z-index: 100;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tauri Drag Region Handling */
+.custom-titlebar,
+.custom-titlebar [data-tauri-drag-region],
+.titlebar-left,
+.titlebar-left *,
+.titlebar-center,
+.titlebar-right,
+.titlebar-breadcrumb,
+.titlebar-breadcrumb *,
+.titlebar-branding,
+.titlebar-branding * {
+  -webkit-app-region: drag;
+  app-region: drag;
+}
+
+/* Non-draggable interactive controls */
+.titlebar-search-btn,
+.window-ctrl-btn,
+.window-ctrl-btn *,
+.titlebar-web-indicator,
+.titlebar-interactive,
+.custom-titlebar button,
+.custom-titlebar button *,
+.custom-titlebar a,
+.custom-titlebar input {
+  -webkit-app-region: no-drag !important;
+  app-region: no-drag !important;
+}
+
+/* --------------------------------------------------------------------------
+   Left Section: Logo, App Name, Divider, Breadcrumb
+   -------------------------------------------------------------------------- */
+.titlebar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 12px;
+  min-width: 0;
+  flex: 0 1 auto;
+  height: 100%;
+}
+
+.titlebar-branding {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+.titlebar-logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none !important;
+  background: transparent !important;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.titlebar-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+[data-theme="plana"] .titlebar-logo-mark,
+[data-theme="dark"] .titlebar-logo-mark,
+.mdui-theme-dark .titlebar-logo-mark {
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+[data-theme="dark"] .titlebar-logo-img,
+.mdui-theme-dark .titlebar-logo-img {
+  mix-blend-mode: normal;
+}
+
+.titlebar-app-name {
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--md-sys-color-on-surface);
+}
+
+.titlebar-divider {
+  width: 1px;
+  height: 12px;
+  background-color: var(--md-sys-color-outline-variant);
+  opacity: 0.6;
+  flex-shrink: 0;
+  margin: 0 4px;
+}
+
+.titlebar-subtitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--md-sys-color-on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: default;
+}
+
+
+.titlebar-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-size: 0.75rem;
+  color: var(--md-sys-color-on-surface-variant);
+  white-space: nowrap;
+}
+
+.titlebar-breadcrumb-notebook {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 400;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.titlebar-breadcrumb-sep {
+  opacity: 0.45;
+  font-size: 0.6875rem;
+  user-select: none;
+}
+
+.titlebar-breadcrumb-note {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+}
+
+.titlebar-dirty-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--ruam-color-unsaved);
+  display: inline-block;
+  flex-shrink: 0;
+  margin-left: 2px;
+  box-shadow: 0 0 5px var(--ruam-color-unsaved-glow);
+}
+
+/* --------------------------------------------------------------------------
+   Center Section: Draggable Window Region
+   -------------------------------------------------------------------------- */
+.titlebar-center {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Right Section: Window Control Buttons & Fallback Indicator
+   -------------------------------------------------------------------------- */
+.titlebar-right {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.window-ctrl-btn {
+  width: 46px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  border: none;
+  border-radius: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: background-color 80ms ease, color 80ms ease;
+  user-select: none;
+  -webkit-user-select: none;
+  box-sizing: border-box;
+}
+
+.window-ctrl-btn svg {
+  display: block;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.window-ctrl-btn:hover,
+.window-ctrl-btn.is-hovered,
+#titlebar-maximize:hover,
+#titlebar-maximize.is-hovered {
+  background-color: var(--chrome-titlebar-btn-hover, rgba(0, 0, 0, 0.06));
+  color: var(--md-sys-color-on-surface);
+}
+
+.window-ctrl-btn:active,
+.window-ctrl-btn.is-active,
+#titlebar-maximize:active,
+#titlebar-maximize.is-active {
+  background-color: var(--chrome-titlebar-btn-active, rgba(0, 0, 0, 0.12));
+}
+
+[data-theme="plana"] .window-ctrl-btn:hover,
+[data-theme="plana"] .window-ctrl-btn.is-hovered,
+[data-theme="plana"] #titlebar-maximize:hover,
+[data-theme="plana"] #titlebar-maximize.is-hovered,
+[data-theme="dark"] .window-ctrl-btn:hover,
+[data-theme="dark"] .window-ctrl-btn.is-hovered,
+[data-theme="dark"] #titlebar-maximize:hover,
+[data-theme="dark"] #titlebar-maximize.is-hovered,
+.mdui-theme-dark .window-ctrl-btn:hover,
+.mdui-theme-dark .window-ctrl-btn.is-hovered,
+.mdui-theme-dark #titlebar-maximize:hover,
+.mdui-theme-dark #titlebar-maximize.is-hovered {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--md-sys-color-on-surface);
+}
+
+[data-theme="plana"] .window-ctrl-btn:active,
+[data-theme="plana"] .window-ctrl-btn.is-active,
+[data-theme="plana"] #titlebar-maximize:active,
+[data-theme="plana"] #titlebar-maximize.is-active,
+[data-theme="dark"] .window-ctrl-btn:active,
+[data-theme="dark"] .window-ctrl-btn.is-active,
+[data-theme="dark"] #titlebar-maximize:active,
+[data-theme="dark"] #titlebar-maximize.is-active,
+.mdui-theme-dark .window-ctrl-btn:active,
+.mdui-theme-dark .window-ctrl-btn.is-active,
+.mdui-theme-dark #titlebar-maximize:active,
+.mdui-theme-dark #titlebar-maximize.is-active {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) .window-ctrl-btn:hover,
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) .window-ctrl-btn.is-hovered,
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) #titlebar-maximize:hover,
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) #titlebar-maximize.is-hovered {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--md-sys-color-on-surface);
+  }
+
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) .window-ctrl-btn:active,
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) .window-ctrl-btn.is-active,
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) #titlebar-maximize:active,
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) #titlebar-maximize.is-active {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.window-ctrl-btn.close {
+  position: relative;
+}
+
+.window-ctrl-btn.close:hover {
+  background-color: #e81123 !important;
+  color: #ffffff !important;
+  transition: none !important;
+  border-top-right-radius: 8px;
+  margin-top: -1px;
+  margin-right: -1px;
+  height: calc(100% + 1px) !important;
+  width: 47px !important;
+}
+
+.window-ctrl-btn.close:active {
+  background-color: #c4101e !important;
+  color: #ffffff !important;
+  transition: none !important;
+  border-top-right-radius: 8px;
+  margin-top: -1px;
+  margin-right: -1px;
+  height: calc(100% + 1px) !important;
+  width: 47px !important;
+}
+
+.window-ctrl-btn:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: -2px;
+}
+
+.window-ctrl-btn.dock-filebar {
+  position: relative;
+}
+
+.window-ctrl-btn.dock-filebar:hover {
+  background-color: var(--chrome-titlebar-btn-hover, rgba(0, 0, 0, 0.06));
+  color: var(--md-sys-color-primary) !important;
+}
+
+.window-ctrl-btn.dock-filebar:active {
+  background-color: var(--chrome-titlebar-btn-active, rgba(0, 0, 0, 0.12));
+  color: var(--md-sys-color-primary) !important;
+}
+
+[data-theme="plana"] .window-ctrl-btn.dock-filebar:hover,
+[data-theme="dark"] .window-ctrl-btn.dock-filebar:hover,
+.mdui-theme-dark .window-ctrl-btn.dock-filebar:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--md-sys-color-primary) !important;
+}
+
+[data-theme="plana"] .window-ctrl-btn.dock-filebar:active,
+[data-theme="dark"] .window-ctrl-btn.dock-filebar:active,
+.mdui-theme-dark .window-ctrl-btn.dock-filebar:active {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--md-sys-color-primary) !important;
+}
+
+.window-ctrl-btn.pin {
+  position: relative;
+}
+
+.window-ctrl-btn.pin svg {
+  width: 12px;
+  height: 12px;
+}
+
+.window-ctrl-btn.pin.is-pinned {
+  color: var(--md-sys-color-primary) !important;
+}
+
+.window-ctrl-btn.pin:hover {
+  background-color: var(--chrome-titlebar-btn-hover, rgba(0, 0, 0, 0.06));
+  color: var(--md-sys-color-on-surface);
+}
+
+.window-ctrl-btn.pin.is-pinned:hover {
+  color: var(--md-sys-color-primary) !important;
+}
+
+[data-theme="plana"] .window-ctrl-btn.pin:hover,
+[data-theme="dark"] .window-ctrl-btn.pin:hover,
+.mdui-theme-dark .window-ctrl-btn.pin:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--md-sys-color-on-surface);
+}
+
+[data-theme="plana"] .window-ctrl-btn.pin.is-pinned,
+[data-theme="dark"] .window-ctrl-btn.pin.is-pinned,
+.mdui-theme-dark .window-ctrl-btn.pin.is-pinned {
+  color: var(--md-sys-color-primary) !important;
+}
+
+/* Maximized corner blindspot (Fitts's Law): button reaches absolute top & right screen pixels */
+.custom-titlebar.is-maximized {
+  border-top: none;
+}
+
+.custom-titlebar.is-maximized .titlebar-right {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.custom-titlebar.is-maximized .window-ctrl-btn {
+  height: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.custom-titlebar.is-maximized .window-ctrl-btn.close,
+.custom-titlebar.is-maximized .window-ctrl-btn.close:hover,
+.custom-titlebar.is-maximized .window-ctrl-btn.close:active {
+  margin: 0 !important;
+  width: 46px !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+}
+
+/* Subtle Web Status Indicator */
+.titlebar-web-indicator {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 0.6875rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.titlebar-web-badge {
+  padding: 2px 7px;
+  border-radius: var(--md-sys-shape-corner-full, 9999px);
+  background-color: var(--md-sys-color-surface-container-high);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Rules
+   -------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .titlebar-breadcrumb-notebook,
+  .titlebar-breadcrumb-sep {
+    display: none;
+  }
+  .titlebar-search-text {
+    display: none;
+  }
+}

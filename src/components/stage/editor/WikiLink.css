@@ -1,0 +1,210 @@
+/* WikiLink Inline Link Pill */
+.ruvo-wikilink,
+.ruam-wikilink {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--md-sys-color-primary);
+  background: color-mix(in srgb, var(--md-sys-color-primary) 12%, transparent);
+  padding: 1px 6px;
+  margin: 0 2px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: text;
+  transition: background 140ms ease, color 140ms ease, box-shadow 140ms ease;
+  vertical-align: baseline;
+}
+
+.ruvo-wikilink:hover,
+.ruam-wikilink:hover {
+  background: color-mix(in srgb, var(--md-sys-color-primary) 22%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--md-sys-color-primary) 35%, transparent);
+  text-decoration: underline;
+}
+
+/* WikiLink Autocomplete Menu */
+.wikilink-autocomplete {
+  position: fixed;
+  z-index: 1350;
+  width: 290px;
+  max-height: 290px;
+  background: var(--md-sys-color-surface-container-high);
+  border: 1px solid var(--ruam-divider-color);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22), 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  animation: wikilinkFadeIn 120ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes wikilinkFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.wikilink-autocomplete-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+  border-bottom: 1px solid var(--ruam-divider-color);
+  margin-bottom: 4px;
+  user-select: none;
+}
+
+.wikilink-autocomplete-header span.shortcut-hint {
+  font-size: 10.5px;
+  font-weight: normal;
+  opacity: 0.75;
+}
+
+.wikilink-suggestion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+  color: var(--md-sys-color-on-surface);
+  transition: background 100ms ease, color 100ms ease;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.wikilink-suggestion-item:hover,
+.wikilink-suggestion-item.is-selected {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.wikilink-suggestion-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.wikilink-suggestion-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wikilink-suggestion-match {
+  font-weight: 700;
+  color: var(--md-sys-color-primary);
+}
+
+.wikilink-suggestion-item.is-selected .wikilink-suggestion-match {
+  color: var(--md-sys-color-on-primary-container);
+  text-decoration: underline;
+}
+
+.wikilink-suggestion-badge {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface-variant);
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.wikilink-suggestion-create {
+  color: var(--md-sys-color-primary);
+  font-weight: 500;
+}
+
+/* WikiLink Hover Preview Popover Card */
+.wikilink-hover-card {
+  position: fixed;
+  z-index: 1350;
+  width: 330px;
+  max-width: 90vw;
+  background: var(--md-sys-color-surface-container-high);
+  border: 1px solid var(--ruam-divider-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24), 0 3px 8px rgba(0, 0, 0, 0.12);
+  padding: 14px 16px;
+  box-sizing: border-box;
+  animation: wikilinkFadeIn 140ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.wikilink-hover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+.wikilink-hover-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.wikilink-hover-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wikilink-hover-excerpt {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--md-sys-color-on-surface-variant);
+  max-height: 110px;
+  overflow-y: auto;
+  margin: 0 0 12px;
+  padding: 6px 8px;
+  background: var(--md-sys-color-surface-container-low);
+  border-radius: 6px;
+  word-break: break-word;
+}
+
+.wikilink-hover-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.wikilink-hover-actions mdui-button {
+  --shape-corner: 6px;
+}
+
+/* Completed Task List Item Styling */
+.notebooklm-editor li.task-list-item:has(> input[type="checkbox"]:checked),
+.notebooklm-editor li.task-list-item.is-completed {
+  color: var(--md-sys-color-outline);
+  text-decoration: line-through;
+  transition: color 150ms ease, opacity 150ms ease;
+}
+
+.notebooklm-editor li.task-list-item input[type="checkbox"] {
+  text-decoration: none;
+  cursor: pointer;
+}

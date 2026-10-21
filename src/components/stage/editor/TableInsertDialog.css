@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Table Insert Dialog Component Styles (Material Design 3)
+   ========================================================================== */
+
+.table-insert-dialog {
+  min-width: min(92vw, 440px);
+  max-width: 500px;
+}
+
+.table-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* Quick presets section */
+.table-dialog-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.table-presets-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.table-preset-btn {
+  --shape-corner: 8px;
+  --mdui-shape-corner: 8px;
+  height: auto;
+  min-height: 48px;
+  padding: 0;
+  width: 100%;
+}
+
+.table-preset-btn::part(button) {
+  height: auto;
+  min-height: 48px;
+  padding: 8px 4px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px !important;
+}
+
+.table-preset-btn::part(label) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 100%;
+}
+
+.table-preset-btn.is-active::part(button) {
+  border-color: var(--md-sys-color-primary) !important;
+}
+
+.table-preset-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.table-preset-desc {
+  font-size: 0.6875rem;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* Stepper rows */
+.table-stepper-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.table-stepper-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.table-stepper-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.table-stepper-control {
+  display: flex;
+  align-items: center;
+  background: var(--md-sys-color-surface-container-low);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 40px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.table-stepper-control:focus-within {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 1px var(--md-sys-color-primary);
+}
+
+.table-stepper-btn {
+  --shape-corner: 0;
+  --mdui-shape-corner: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  flex-shrink: 0;
+}
+
+.table-stepper-btn::part(button) {
+  border-radius: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.table-stepper-btn:hover:not([disabled]):not(:disabled) {
+  background: var(--md-sys-color-surface-container-highest);
+  color: var(--md-sys-color-on-surface);
+}
+
+.table-stepper-btn[disabled],
+.table-stepper-btn:disabled {
+  opacity: 0.35 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+.table-stepper-input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  outline: none;
+  -moz-appearance: textfield;
+}
+
+.table-stepper-input::-webkit-outer-spin-button,
+.table-stepper-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Live mini-grid preview */
+.table-preview-card {
+  background: var(--md-sys-color-surface-container-lowest);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.table-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.table-preview-grid-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 160px;
+  overflow: hidden;
+  padding: 2px;
+}
+
+.table-preview-grid {
+  display: grid;
+  gap: 4px;
+}
+
+.table-preview-cell {
+  height: 22px;
+  border-radius: 4px;
+  font-size: 0.6875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.table-preview-cell.is-header {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  font-weight: 600;
+  border: 1px solid color-mix(in srgb, var(--md-sys-color-primary) 35%, transparent);
+}
+
+.table-preview-cell.is-body {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-outline);
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.table-preview-more-hint {
+  font-size: 0.6875rem;
+  color: var(--md-sys-color-outline);
+  text-align: center;
+  padding: 2px 0;
+  font-style: italic;
+}
+
+.table-preview-summary {
+  font-size: 0.75rem;
+  color: var(--md-sys-color-on-surface-variant);
+  text-align: center;
+  padding-top: 4px;
+  border-top: 1px dashed var(--md-sys-color-outline-variant);
+}
+
+.table-preview-summary strong {
+  color: var(--md-sys-color-primary);
+  font-weight: 600;
+}

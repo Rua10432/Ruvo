@@ -1,0 +1,52 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node dependencies & web builds
+node_modules
+dist
+dist-ssr
+*.local
+
+# Rust & Tauri build targets
+target/
+src-tauri/target/
+src-tauri/gen/schemas
+
+# Local user data & notes
+notebook/
+.ruam_stats.json
+.ruvo_stats.json
+
+# Local documentation & reference files
+llms.txt
+llms-full.txt
+HANDOFF.md
+
+# Environment variables & temporary files
+.env
+.env*.local
+*.tmp
+Thumbs.db
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.cursor/*
+.cursor
+llms-full.txt
+llms.txt
+HANDOFF.md
+

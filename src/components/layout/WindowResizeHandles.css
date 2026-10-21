@@ -1,0 +1,83 @@
+/* Window Resize Hitboxes for Borderless/Transparent Windows */
+
+.window-resize-handles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+.win-resize-edge,
+.win-resize-corner {
+  position: absolute;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Edges */
+.win-resize-top {
+  top: 0;
+  left: 10px;
+  right: 50px; /* Leave space for window control buttons */
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.win-resize-bottom {
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.win-resize-left {
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  width: 4px;
+  cursor: ew-resize;
+}
+
+.win-resize-right {
+  top: 10px;
+  bottom: 10px;
+  right: 0;
+  width: 4px;
+  cursor: ew-resize;
+}
+
+/* Corners */
+.win-resize-top-left {
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nwse-resize;
+}
+
+.win-resize-top-right {
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  cursor: nesw-resize;
+}
+
+.win-resize-bottom-left {
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nesw-resize;
+}
+
+.win-resize-bottom-right {
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nwse-resize;
+}
+

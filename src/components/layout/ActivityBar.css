@@ -1,0 +1,172 @@
+/* ActivityBar - 48px 左侧全局活动栏 */
+.activity-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  min-width: 48px;
+  max-width: 48px;
+  height: 100%;
+  padding: 8px 0;
+  box-sizing: border-box;
+  background: var(--md-sys-color-surface);
+  border-right: 1px solid var(--ruam-divider-color);
+  user-select: none;
+  position: relative;
+  z-index: 100;
+  overflow-x: hidden;
+}
+
+.activity-bar mdui-tooltip {
+  --z-index: 2500;
+}
+
+.activity-bar mdui-tooltip::part(popup) {
+  --z-index: 2500;
+  margin-left: 8px;
+}
+
+.activity-bar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.activity-bar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.activity-bar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding-bottom: 2px;
+}
+
+/* 活动栏项目按钮基础样式 */
+.activity-bar-item {
+  --shape-corner: var(--md-shape-small, 8px);
+  --mdui-shape-corner: var(--md-shape-small, 8px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: var(--md-shape-small, 8px);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  transition: background-color 80ms ease, color 80ms ease, transform 80ms ease;
+  box-sizing: border-box;
+}
+
+.activity-bar-item::part(button) {
+  border-radius: var(--md-shape-small, 8px) !important;
+}
+
+.activity-bar-item:hover {
+  background: var(--chrome-titlebar-btn-hover, rgba(0, 0, 0, 0.06));
+  color: var(--md-sys-color-on-surface);
+}
+
+.activity-bar-item:active {
+  background: rgba(0, 0, 0, 0.12);
+  transform: scale(0.96);
+}
+
+[data-theme="plana"] .activity-bar-item:hover,
+[data-theme="dark"] .activity-bar-item:hover,
+.mdui-theme-dark .activity-bar-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--md-sys-color-on-surface);
+}
+
+[data-theme="plana"] .activity-bar-item:active,
+[data-theme="dark"] .activity-bar-item:active,
+.mdui-theme-dark .activity-bar-item:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) .activity-bar-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--md-sys-color-on-surface);
+  }
+
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) .activity-bar-item:active {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.activity-bar-item:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: -1px;
+}
+
+/* 激活状态：左侧竖向指示条 + primary-container 背景 */
+.activity-bar-item.is-active {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.activity-bar-item.is-active:hover {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.activity-bar-item.is-active::before {
+  content: "";
+  position: absolute;
+  left: -5px; /* 对齐至 48px 活动栏的最左侧边界 */
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--md-sys-color-primary);
+  pointer-events: none;
+}
+
+/* 图标规范 */
+.activity-bar-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* 数字徽章（用于开发计划未完成项等） */
+.activity-bar-badge {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  background: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+/* Plana 暗色模式微光效果增强 */
+[data-theme="plana"] .activity-bar-item.is-active::before,
+.mdui-theme-dark .activity-bar-item.is-active::before {
+  box-shadow: 0 0 8px rgba(180, 197, 255, 0.6);
+}
+

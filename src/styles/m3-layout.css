@@ -1,0 +1,558 @@
+/* Arona - 亮色模式 */
+:root, [data-theme="arona"] {
+  --md-sys-color-primary: #0284c7;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #e0f2fe;
+  --md-sys-color-on-primary-container: #002e4d;
+
+  --md-sys-color-secondary: #3b5f7e;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #d2e4f8;
+  --md-sys-color-on-secondary-container: #001d32;
+
+  --md-sys-color-tertiary: #00687a;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #afecff;
+  --md-sys-color-on-tertiary-container: #001f26;
+
+  --md-sys-color-surface: #f7f9ff;
+  --md-sys-color-on-surface: #171c20;
+  --md-sys-color-on-surface-variant: #41474f;
+
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #f1f4fa;
+  --md-sys-color-surface-container: #ebeff5;
+  --md-sys-color-surface-container-high: #e5e9ef;
+  --md-sys-color-surface-container-highest: #dfe3ea;
+
+  --md-sys-color-outline: #717780;
+  --md-sys-color-outline-variant: #c0c7d0;
+  --ruvo-divider-color: rgba(0, 0, 0, 0.12);
+  --ruam-divider-color: var(--ruvo-divider-color);
+  --ruvo-sash-grip-color: rgba(0, 0, 0, 0.38);
+  --ruam-sash-grip-color: var(--ruvo-sash-grip-color);
+  --ruvo-color-unsaved: #e65100;
+  --ruam-color-unsaved: var(--ruvo-color-unsaved);
+  --ruvo-color-unsaved-glow: rgba(230, 81, 0, 0.45);
+  --ruam-color-unsaved-glow: var(--ruvo-color-unsaved-glow);
+
+  --md-sys-shape-corner-medium: 14px;
+  --md-sys-shape-corner-full: 9999px;
+  --md-sys-panel-radius: 8px;
+  --md-sys-elevation-shadow: 0px 2px 8px rgba(0, 64, 128, 0.08);
+
+  /* Component Shape Aliases */
+  --md-shape-small: 8px;
+  --md-shape-medium: var(--md-sys-shape-corner-medium);
+  --md-shape-large: 16px;
+
+  /* Chrome TitleBar & StatusBar Tokens */
+  --chrome-titlebar-border: transparent;
+  --chrome-titlebar-btn-hover: rgba(0, 0, 0, 0.06);
+  --chrome-titlebar-btn-active: rgba(0, 0, 0, 0.12);
+  --status-bar-hover-bg: rgba(0, 0, 0, 0.05);
+
+  /* Typography Tokens - Google Material Design: Roboto (Latin) + Noto Sans SC (Chinese) */
+  --ruvo-font-family: "Roboto", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ruam-font-family: var(--ruvo-font-family);
+  --ruvo-font-mono: "Cascadia Code", "Fira Code", Consolas, "JetBrains Mono", monospace;
+  --ruam-font-mono: var(--ruvo-font-mono);
+  --mdui-typescale-font-family: var(--ruvo-font-family);
+
+  font-family: var(--ruvo-font-family);
+  color: var(--md-sys-color-on-surface);
+  font-synthesis: weight style;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Plana - 暗色模式 */
+[data-theme="plana"], [data-theme="dark"], .mdui-theme-dark {
+  --md-sys-color-primary: #7dd3fc;
+  --md-sys-color-on-primary: #002856;
+  --md-sys-color-primary-container: #0c4a6e;
+  --md-sys-color-on-primary-container: #e0f2fe;
+
+  --md-sys-color-secondary: #f472b6;
+  --md-sys-color-on-secondary: #4a0429;
+  --md-sys-color-secondary-container: #701a45;
+  --md-sys-color-on-secondary-container: #fbcfe8;
+
+  --md-sys-color-tertiary: #fda4af;
+  --md-sys-color-on-tertiary: #0b3444;
+  --md-sys-color-tertiary-container: #264b5c;
+  --md-sys-color-on-tertiary-container: #c2e8ff;
+
+  --md-sys-color-surface: #11151c;
+  --md-sys-color-on-surface: #e1e6f3;
+  --md-sys-color-on-surface-variant: #9da7b8;
+
+  --md-sys-color-surface-container-lowest: #0c0f15;
+  --md-sys-color-surface-container-low: #161b24;
+  --md-sys-color-surface-container: #1c2230;
+  --md-sys-color-surface-container-high: #222938;
+  --md-sys-color-surface-container-highest: #283142;
+
+  --md-sys-color-outline: #454e60;
+  --md-sys-color-outline-variant: #232b3a;
+
+  --ruvo-divider-color: rgba(255, 255, 255, 0.12);
+  --ruam-divider-color: var(--ruvo-divider-color);
+  --ruvo-sash-grip-color: rgba(255, 255, 255, 0.35);
+  --ruam-sash-grip-color: var(--ruvo-sash-grip-color);
+  --ruvo-color-unsaved: #ffb74d;
+  --ruam-color-unsaved: var(--ruvo-color-unsaved);
+  --ruvo-color-unsaved-glow: rgba(255, 183, 77, 0.5);
+  --ruam-color-unsaved-glow: var(--ruvo-color-unsaved-glow);
+
+  --md-sys-shape-corner-medium: 8px;
+  --md-sys-elevation-shadow: 0 0 14px rgba(125, 211, 252, 0.18);
+  --md-sys-glow-primary: 0 0 14px rgba(125, 211, 252, 0.35);
+
+  /* MDUI Dark Inverse Surface Design Tokens */
+  --mdui-color-inverse-surface: 30, 36, 48;
+  --mdui-color-inverse-on-surface: 241, 245, 249;
+
+  /* Chrome TitleBar & StatusBar Tokens */
+  --chrome-titlebar-border: transparent;
+  --chrome-titlebar-btn-hover: rgba(255, 255, 255, 0.08);
+  --chrome-titlebar-btn-active: rgba(255, 255, 255, 0.12);
+  --status-bar-hover-bg: rgba(255, 255, 255, 0.07);
+
+  /* MDUI native tooltip color tokens (RGB triplet for calc) */
+  --mdui-color-inverse-surface: 30, 36, 48;
+  --mdui-color-inverse-on-surface: 241, 245, 249;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) {
+    --md-sys-color-primary: #7dd3fc;
+    --md-sys-color-on-primary: #002856;
+    --md-sys-color-primary-container: #0c4a6e;
+    --md-sys-color-on-primary-container: #e0f2fe;
+
+    --md-sys-color-secondary: #f472b6;
+    --md-sys-color-on-secondary: #4a0429;
+    --md-sys-color-secondary-container: #701a45;
+    --md-sys-color-on-secondary-container: #fbcfe8;
+
+    --md-sys-color-tertiary: #fda4af;
+    --md-sys-color-on-tertiary: #0b3444;
+    --md-sys-color-tertiary-container: #264b5c;
+    --md-sys-color-on-tertiary-container: #c2e8ff;
+
+    --md-sys-color-surface: #11151c;
+    --md-sys-color-on-surface: #e1e6f3;
+    --md-sys-color-on-surface-variant: #9da7b8;
+
+    --md-sys-color-surface-container-lowest: #0c0f15;
+    --md-sys-color-surface-container-low: #161b24;
+    --md-sys-color-surface-container: #1c2230;
+    --md-sys-color-surface-container-high: #222938;
+    --md-sys-color-surface-container-highest: #283142;
+
+    --md-sys-color-outline: #454e60;
+    --md-sys-color-outline-variant: #232b3a;
+
+    --ruvo-divider-color: rgba(255, 255, 255, 0.12);
+    --ruam-divider-color: var(--ruvo-divider-color);
+    --ruvo-sash-grip-color: rgba(255, 255, 255, 0.35);
+    --ruam-sash-grip-color: var(--ruvo-sash-grip-color);
+    --ruvo-color-unsaved: #ffb74d;
+    --ruam-color-unsaved: var(--ruvo-color-unsaved);
+    --ruvo-color-unsaved-glow: rgba(255, 183, 77, 0.5);
+    --ruam-color-unsaved-glow: var(--ruvo-color-unsaved-glow);
+
+    --md-sys-shape-corner-medium: 8px;
+    --md-sys-elevation-shadow: 0 0 14px rgba(125, 211, 252, 0.18);
+    --md-sys-glow-primary: 0 0 14px rgba(125, 211, 252, 0.35);
+
+    /* Chrome TitleBar & StatusBar Tokens */
+    --chrome-titlebar-border: transparent;
+    --chrome-titlebar-btn-hover: rgba(255, 255, 255, 0.08);
+    --chrome-titlebar-btn-active: rgba(255, 255, 255, 0.12);
+    --status-bar-hover-bg: rgba(255, 255, 255, 0.07);
+
+    /* MDUI native tooltip color tokens (RGB triplet for calc) */
+    --mdui-color-inverse-surface: 30, 36, 48;
+    --mdui-color-inverse-on-surface: 241, 245, 249;
+  }
+}
+
+* { box-sizing: border-box; }
+:root, html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent !important;
+  background-color: transparent !important;
+  font-family: var(--ruvo-font-family);
+}
+body {
+  overflow: hidden;
+  user-select: none;
+  font-family: var(--ruvo-font-family);
+  background: transparent !important;
+  background-color: transparent !important;
+}
+button, input, textarea, select {
+  font: inherit;
+  font-family: inherit;
+}
+mdui-button,
+mdui-button-icon,
+mdui-menu,
+mdui-menu-item,
+mdui-text-field,
+mdui-dialog,
+mdui-tooltip,
+mdui-navigation-rail,
+mdui-navigation-rail-item,
+mdui-dropdown,
+mdui-chip,
+mdui-list,
+mdui-list-item,
+mdui-tab,
+mdui-tabs,
+mdui-badge {
+  font-family: var(--ruvo-font-family);
+}
+button { border: 0; cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--md-sys-color-primary); outline-offset: 2px; }
+::selection { background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-surface); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--md-sys-color-outline-variant); border: 3px solid transparent; border-radius: 999px; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--md-sys-color-on-surface-variant); border-width: 2px; }
+
+.app-layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background: var(--md-sys-color-surface);
+  box-sizing: border-box;
+  border: 1px solid var(--ruvo-divider-color, var(--ruam-divider-color));
+  border-radius: 8px; /* Windows 11 standard corner radius (DWMWCP_ROUND) */
+}
+
+/* When maximized, eliminate outer border to enable perfect top-right corner blind click (Fitts's Law) */
+.app-layout.is-maximized {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.app-layout:not(.is-maximized) .custom-titlebar {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.app-layout:not(.is-maximized) .status-bar {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.layout-workspace {
+  display: flex;
+  flex-direction: row;
+  min-height: 0;
+  min-width: 0;
+  flex: 1 1 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.layout-panels {
+  min-height: 0;
+  min-width: 0;
+  flex: 1 1 0%;
+  width: 100%;
+  height: auto !important;
+  display: flex;
+  padding: 3px 4px;
+  gap: 4px;
+  box-sizing: border-box;
+}
+
+.layout-panel {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--md-sys-panel-radius, 8px);
+  background: var(--md-sys-color-surface);
+  box-sizing: border-box;
+}
+
+.layout-panel[data-panel-collapsed] {
+  border: none;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 26px;
+  min-height: 26px;
+  flex: 0 0 26px;
+  gap: 16px;
+  padding: 0 10px;
+  border-top: 1px solid var(--ruvo-divider-color, var(--ruam-divider-color));
+  color: var(--md-sys-color-on-surface-variant);
+  background: var(--md-sys-color-surface);
+  font-size: 0.6875rem;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.status-path {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background-color 80ms ease, color 80ms ease;
+  user-select: none;
+  cursor: default;
+}
+
+.status-items {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.status-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background-color 80ms ease, color 80ms ease;
+  user-select: none;
+  cursor: default;
+}
+
+.status-path:hover,
+.status-meta:hover {
+  background-color: var(--status-bar-hover-bg, rgba(0, 0, 0, 0.05));
+  color: var(--md-sys-color-on-surface);
+}
+
+[data-theme="plana"] .status-path:hover,
+[data-theme="plana"].status-path:hover,
+[data-theme="dark"] .status-path:hover,
+[data-theme="dark"].status-path:hover,
+.mdui-theme-dark .status-path:hover,
+.mdui-theme-dark.status-path:hover,
+[data-theme="plana"] .status-meta:hover,
+[data-theme="plana"].status-meta:hover,
+[data-theme="dark"] .status-meta:hover,
+[data-theme="dark"].status-meta:hover,
+.mdui-theme-dark .status-meta:hover,
+.mdui-theme-dark.status-meta:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  color: var(--md-sys-color-on-surface);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) .status-path:hover,
+  :root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) .status-meta:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    color: var(--md-sys-color-on-surface);
+  }
+}
+
+.sync-status { display: inline-flex; align-items: center; gap: 6px; color: var(--md-sys-color-primary); }
+.sync-status.is-dirty { color: var(--md-sys-color-on-surface-variant); }
+
+.status-save-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.01em;
+  transition: background-color 80ms ease, color 180ms ease, opacity 180ms ease;
+  user-select: none;
+}
+
+.status-save-state.is-unsaved,
+.status-save-state.is-unsaved:hover {
+  color: var(--ruvo-color-unsaved, var(--ruam-color-unsaved));
+  font-weight: 500;
+}
+
+.status-save-state.is-saving,
+.status-save-state.is-saving:hover {
+  color: var(--md-sys-color-primary);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.status-save-state.is-saved,
+.status-save-state.is-saved:hover {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.status-save-state.is-saved .status-save-icon {
+  color: var(--md-sys-color-primary);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.resize-handle {
+  position: relative;
+  z-index: 2;
+  width: 4px;
+  margin: 0 -2px;
+  background: transparent;
+  transition: background 160ms ease;
+  cursor: col-resize;
+  border-radius: 2px;
+}
+.resize-handle:focus {
+  background: transparent;
+}
+.resize-handle:focus-visible {
+  outline: none;
+}
+
+/* VS Code-style sash grip handle (3 vertical dots at center) */
+.resize-handle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: var(--ruvo-sash-grip-color, var(--ruam-sash-grip-color));
+  box-shadow: 0 -5px 0 0 var(--ruvo-sash-grip-color, var(--ruam-sash-grip-color)), 0 5px 0 0 var(--ruvo-sash-grip-color, var(--ruam-sash-grip-color));
+  pointer-events: none;
+  z-index: 3;
+  transition: background-color 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+/* Expanded hit-test area for easier cursor grabbing */
+.resize-handle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  cursor: col-resize;
+}
+.resize-handle:hover,
+.resize-handle[data-separator="hover"],
+.resize-handle[data-separator="active"],
+.resize-handle[data-separator-active],
+.resize-handle[data-resize-handle-state="hover"],
+.resize-handle[data-resize-handle-state="drag"],
+.resize-handle:active {
+  background: var(--md-sys-color-primary);
+}
+
+.resize-handle:hover::before,
+.resize-handle[data-separator="hover"]::before,
+.resize-handle[data-separator="active"]::before,
+.resize-handle[data-separator-active]::before,
+.resize-handle[data-resize-handle-state="hover"]::before,
+.resize-handle[data-resize-handle-state="drag"]::before,
+.resize-handle:active::before {
+  background-color: var(--md-sys-color-on-primary);
+  box-shadow: 0 -5px 0 0 var(--md-sys-color-on-primary), 0 5px 0 0 var(--md-sys-color-on-primary);
+}
+.panel-reopen-button { position: absolute; z-index: 10; top: 42px; }
+.panel-reopen-button-left { left: 58px; }
+.panel-reopen-button-right { right: 10px; }
+.paper-container { width: min(100% - 48px, 800px); margin: 32px auto; }
+
+@media (max-width: 720px) {
+  .status-bar { gap: 8px; padding: 0 8px; }
+  .status-items { gap: 4px; }
+  .status-items span:not(.sync-status):not(.status-save-state) { display: none; }
+}
+
+/* Dialog outlined text field floating label clipping fix */
+mdui-dialog::part(body) {
+  overflow: visible;
+}
+
+mdui-dialog mdui-text-field {
+  margin-top: 0.625rem;
+  display: block;
+  width: 100%;
+}
+
+/* Tooltip Dark Mode Styling: Fix stark white box popup in dark themes */
+[data-theme="plana"] mdui-tooltip::part(popup),
+[data-theme="dark"] mdui-tooltip::part(popup),
+.mdui-theme-dark mdui-tooltip::part(popup),
+:root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) mdui-tooltip::part(popup) {
+  background: rgb(var(--mdui-color-inverse-surface, 30, 36, 48)) !important;
+  background-color: rgb(var(--mdui-color-inverse-surface, 30, 36, 48)) !important;
+  color: rgb(var(--mdui-color-inverse-on-surface, 241, 245, 249)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+  font-size: 11.5px !important;
+  border-radius: 6px !important;
+}
+
+[data-theme="plana"] mdui-tooltip::part(content),
+[data-theme="dark"] mdui-tooltip::part(content),
+.mdui-theme-dark mdui-tooltip::part(content),
+:root:not([data-theme="arona"]):not([data-theme="light"]):not(.mdui-theme-light) mdui-tooltip::part(content) {
+  color: rgb(var(--mdui-color-inverse-on-surface, 241, 245, 249)) !important;
+}
+
+/* 全局主题切换圆形扩散动效 (View Transition API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* 编辑器拼写错误红色波浪线 (CSS Custom Highlight API) */
+::highlight(ruvo-spell-error),
+::highlight(ruam-spell-error) {
+  text-decoration: underline wavy var(--md-sys-color-error, #ba1a1a);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+
+

@@ -1,0 +1,163 @@
+/* 独立桌面悬浮便签窗口样式 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.sticky-note-app {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--ruam-font-family, "Roboto", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif);
+  overflow: hidden;
+  border: 1px solid var(--ruam-divider-color);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* 顶部窗口标题栏与便签容器圆角及背景统一 */
+.sticky-note-app .custom-titlebar {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: var(--md-sys-color-surface);
+  border-bottom: 1px solid var(--ruam-divider-color);
+  flex-shrink: 0;
+}
+
+/* 便签主体 (只读预览内容区，背景与标题栏完全统一) */
+.sticky-note-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 14px 16px 20px;
+  box-sizing: border-box;
+  background-color: var(--md-sys-color-surface);
+}
+
+/* 统一字体及排版 */
+.sticky-note-app,
+.sticky-note-header,
+.sticky-note-title,
+.sticky-note-preview,
+.sticky-note-preview p,
+.sticky-note-preview div,
+.sticky-note-preview span,
+.sticky-note-preview li,
+.sticky-note-preview h1,
+.sticky-note-preview h2,
+.sticky-note-preview h3,
+.sticky-note-preview h4,
+.sticky-note-preview h5,
+.sticky-note-preview h6 {
+  font-family: var(--ruam-font-family, "Roboto", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif) !important;
+}
+
+/* 预览渲染区 */
+.sticky-note-preview {
+  font-size: var(--ruam-editor-font-size, 14.5px);
+  line-height: var(--ruam-editor-line-height, 1.65);
+  letter-spacing: 0.01em;
+  color: var(--md-sys-color-on-surface, #f1f5f9);
+  user-select: text;
+  word-break: break-word;
+}
+
+.sticky-note-preview h1,
+.sticky-note-preview h2,
+.sticky-note-preview h3,
+.sticky-note-preview h4 {
+  margin: 12px 0 6px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.sticky-note-preview h1 { font-size: 1.3rem; }
+.sticky-note-preview h2 { font-size: 1.15rem; }
+.sticky-note-preview h3 { font-size: 1.05rem; }
+
+.sticky-note-preview p {
+  margin: 6px 0;
+}
+
+.sticky-note-preview ul,
+.sticky-note-preview ol {
+  margin: 6px 0;
+  padding-left: 20px;
+}
+
+.sticky-note-preview li {
+  margin: 3px 0;
+}
+
+.sticky-note-preview code {
+  font-family: var(--ruam-font-mono, "Cascadia Code", "Fira Code", Consolas, monospace) !important;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: var(--md-sys-color-surface-container-high, rgba(255, 255, 255, 0.08));
+}
+
+.sticky-note-preview pre {
+  margin: 8px 0;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--md-sys-color-surface-container-high, rgba(255, 255, 255, 0.08));
+  overflow-x: auto;
+}
+
+.sticky-note-preview pre code {
+  padding: 0;
+  background: transparent;
+}
+
+.sticky-note-preview blockquote {
+  margin: 8px 0;
+  padding: 4px 10px;
+  border-left: 3px solid var(--md-sys-color-primary, #60a5fa);
+  color: var(--md-sys-color-on-surface-variant, #94a3b8);
+}
+
+.sticky-note-preview hr {
+  border: none;
+  border-top: 1px solid var(--ruam-divider-color, rgba(255, 255, 255, 0.1));
+  margin: 10px 0;
+}
+
+.sticky-note-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 12.5px;
+}
+
+.sticky-note-preview th,
+.sticky-note-preview td {
+  border: 1px solid var(--ruam-divider-color, rgba(255, 255, 255, 0.15));
+  padding: 4px 8px;
+}
+
+.sticky-note-loading,
+.sticky-note-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--md-sys-color-on-surface-variant, #94a3b8);
+  font-size: 13px;
+}
+
+.sticky-note-error {
+  color: var(--md-sys-color-error, #f87171);
+}
